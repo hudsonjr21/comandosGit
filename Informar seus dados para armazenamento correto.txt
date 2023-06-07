@@ -1,0 +1,5 @@
+Antes de qualquer interação com o git, você precisa informar quem é você para que ele 
+armazene corretamente os dados do autor de cada uma das alterações no código.
+
+git config --local user.name "Seu nome aqui"
+git config --local user.email "seu@email.aqui"

@@ -1,0 +1,5 @@
+ E caso você esteja na branch master querendo mudar para main, 
+ pode rodar esses comandos no terminal ou Git Bash:
+
+git branch -m master main
+git push -u origin main

@@ -1,0 +1,102 @@
+****************************************************
+***************CURSO 1******************************
+****************************************************
+OBS: (MATAR COMANDO TERMINAL tecla 'q').
+
+git log = VISUALIZAR LOGS DE COMMITS.
+
+git log --oneline = INFORMAÇÃO COMMIT RESUMIDO.
+
+git log -p = INFORMAÇÃO LOG COMMIT DETALHADO.
+
+git log --graph = EXIBIR LINHAS ESPECÍFICAS REPRESENTANDO O DESENVOLVIMENTO, ALTERNATIVA DO "VIZUALIZING GIT".
+
+OBS: (Site com comandos de formatação para exibir o log commit)
+[https://devhints.io/git-log]
+
+git config --local user.name "nome do usuário"  = COMANDO DE CONFIGURAÇÃO, TROCAR NOME.
+
+git add .gitignore = ADICIONAR ARQUIVO .gitignore
+
+git remote = LISTAR TODOS REPOSITÓRIOS REMOTOS.
+
+git remote add "nome.Ex: origin" " CAMINHO DA PASTA.Ex: C:/Users/..."= ADICIONAR REPOSITÓRIO EXISTENTE.
+
+git remote -v = EXIBE O ENDEREÇO DO LOCAL.
+
+git clone "caminho do repositório. Ex: /c/Users/documents/... ou HTTPS" = CLONA O REPOSITÓRIO.
+
+git remote rename "atual nome" "novo nome" = MUDAR NOME DO REPOSITÓRIO.
+
+git push "nome do repositório.Ex:Origin" "nome da branch.Ex:main,dev" = ENVIAR DADOS PARA REPOSITÓRIO.
+
+git pull "nome do repositório.Ex:Origin" "nome da branch.Ex:main,dev" = PUXAR DADOS PARA REPOSITÓRIO.
+
+git checkout "nome da branch" = PARA IR PARA BRANCH QUE DESEJA.
+
+git checkout -b "nome" = CRIAR BRANCH NOVA
+
+git merge "Nome da branch" = UNIR ALTERAÇÕES DA BRANCH
+
+git rebase "nome branch" = GIT PEGARÁ OS COMMITS NA "BRANCH Q INFORMOU" E ATUALIZARA A "MAIN", E VAI POSSUIR TODOS COMMITS DA BRANCH ALÉM QUE HAVIA DELA MESMA.
+
+git checkout -- "nome do arquivo" = DESFAZER MODIFICAÇÃO DO ARQUIVO, ANTES DO COMANDO add.
+
+git reset HEAD "nome do arquivo" = DESFAZER MODIFICAÇÃO DEPOIS DE add PARA O COMMIT.
+
+git revert "Hash do commit" = DESFAZER O COMMIT.
+
+git stash = "GUARDAR ALTERAÇÃO DO ARQUIVO EM UM LOCAL TEMPORÁRIO, PARA TERMINAR DEPOIS, SEM PRECISAR DO COMMIT.
+
+git stash list =  LISTA DO QUE POSSO APLICAR.
+
+git stash apply "número da Stash" = APLICAR MODIFICAÇÃO.
+
+git stash drop = REMOVER STASH.
+
+git stash pop = PEGAR A ULTIMA ALTERAÇÃO ADICIONADA À STASH E REMOVÊ-LA.
+
+git checkout "código commit" = NAVEGAR ENTRE COMMITS( mas para consolidar alguma alteração, tera q criar um branch nova.).
+
+git diff = DIFERENÇA DO ARQUIVO QUE AINDA ESTOU MODIFICANDO, QUE NAO add PARA COMMIT.
+
+git diff "commit".."commit2" = DIFERENÇA DO QUE FOI ALTERADO ENTRE ESSE INTERVALO DE COMMIT.
+
+git log -n 2 = SOMENTE OS 2 ULTIMAS COMMITS.
+
+git tag -a "nome da tag.Ex:v0.1.0" = CRIAR UMA VERSÃO ONDE VOCÊ PODE VOLTAR E TER EXATAMENTE O CÓDIGO ATÉ ALI MODIFICADO.
+
+git tag -a "nome da tag.Ex:v0.1.0" -m "Mensagem para essa versão" = MESMA FUNCIONALIDADE DO git tag, MAS COM MENSAGEM.
+
+git push origin "nome da tag" = ENVIAR TAG PARA MAIN DO GIT HUB.
+
+****************************************************
+***************CURSO 2******************************
+****************************************************
+
+- O Issues, no GitHub, é :
+    > Reportar e controlar os problemas e bugs de um projeto. 
+    > Sugestão de melhorias no projeto e pedidos de novas funcionalidades. 
+    > Utilizado para organizar os palestrantes e sugestões de palestras.
+
+- O Fork, é a cópia do repositório que deseja trabalhar e editar como preferir.
+
+*** OBS: Depois de copiar o projeto para GitHub, clonar ele na sua maquina, criar um
+acesso remoto para ele, você vai alterar o projeto, fazer o commit e um push, vai dar
+erro [remote rejected] > esse erro se da por conta da credencias do Git no Windows, 
+tem que apagar essas credencias. Segue abaixo o caminho para chegar nas credencias:
+    >Painel de controle
+        >Contas de Usuário
+            >Gerenciador de Credencias
+                >Credencias do Windows
+                    >Credencias Genéricas - Apagar credencial "git:https://github.com"
+
+git rebase -i HEAD~3 = UNIR OS TRÊS ULTIMAS COMMITS COM O ATUAL.
+ou
+git rebase -i "commit anterior" = UNIR COMMIT ATUAL COM OS ANTERIORES DO COMMIT DIGITADO.
+    > VAI APARECER UMA TELA COM OS COMMITS QUE DESEJA UNIR, 
+    PARA ISSO TEM QUE ADICIONAR UM "s" NA FRENTE DO COMMIT, 
+    NO LUGAR DE "pick", E DEIXAR O "pick" NA FRENTE DO QUE VAI VIRAR UM COMMIT SÓ.
+(OBS: USAR ":x" PARA SALVAR E CONTINUAR).
+    > EM SEGUIDA VAI PEDIR UMA MENSAGEM PARA ESSE COMMIT QUE UNIFICOU.
+
