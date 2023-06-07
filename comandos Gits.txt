@@ -100,3 +100,27 @@ git rebase -i "commit anterior" = UNIR COMMIT ATUAL COM OS ANTERIORES DO COMMIT 
 (OBS: USAR ":x" PARA SALVAR E CONTINUAR).
     > EM SEGUIDA VAI PEDIR UMA MENSAGEM PARA ESSE COMMIT QUE UNIFICOU.
 
+git cherry-pick "nome commit" = TRAZER UM ÚNICO COMMIT ESPECÍFICO DE OUTRA BRANCH PARA A BRANCH QUE ESTEJA TRABALHANDO.
+
+git bisect start = INICIAR UAM BUSCA, TENHO QUE INFORMAR UM ESTADO, UMA COMMIT DE UMA ALTERAÇÃO QUE NAO ESTEJA CORRETA.
+    > git bisect bad HEAD (que é o commit atual)
+        > git bisect good "algum commit" = INFORMAR O COMMIT DE ONDE O CÓDIGO ESTAVA BOM.
+-Vai verificar no código se foi a alteração que procurava, ai dar o comando
+            > git bisect good 
+            senão:
+            > git bisect bad
+-Para encerrar a busca:
+    > git bisect reset       
+
+git show = MOSTRAR TODAS ALTERAÇÕES DOS COMMITS.
+
+git show "nome commit" = ALTERAÇÃO QUE FOI FEITA NESSE COMMIT.
+
+git blame =  EXIBIR RESPONSÁVEIS POR CADA LINHA DE CÓDIGO E SUA ALTERAÇÃO NO ARQUIVO.
+
+git branch = VER BRANCH EXISTENTE NO PROJETO.
+
+git branch "nome da branch" = CRIAR BRANCH.
+
+git branch -d "nome da branch" =  DELETAR BRANCH, CASO ELA ESTEJA ANTERIOR A BRANCH ATUAL. CASO ELA ESTEJA A FRENTE, UTILIZA O "-D".
+
