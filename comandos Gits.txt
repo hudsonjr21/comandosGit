@@ -124,3 +124,45 @@ git branch "nome da branch" = CRIAR BRANCH.
 
 git branch -d "nome da branch" =  DELETAR BRANCH, CASO ELA ESTEJA ANTERIOR A BRANCH ATUAL. CASO ELA ESTEJA A FRENTE, UTILIZA O "-D".
 
+OBS:
+    > Existe ferramentas visuais para auxílio para trabalho com git, umas delas o Git Cola,
+    site para download: (https://git-cola.github.io);
+    > Outra ferramenta de interface gráfica pra trabalhar com GIT, GitHub Desktop,
+    site para download:(https://desktop.github.com);
+    > Uma ferramenta mais completa que as duas anteriores, GitKraken,
+    site pra download: (https://www.gitkraken.com).
+
+cd .git = ENTRA DENTRO DO DIRETÓRIO GIT.
+
+OBS: 
+    > O Git possui eventos próprios, que são chamados de hooks. 
+    Assim, conseguimos criar os chamados Git Hooks para executarem 
+    uma ação quando um evento acontecer.
+    > Podemos criar Shell script, para isso utilizaremos alguns comando. Abaixo exemplo:
+        > vim pre-commit (sem o ".sample", pois assim são os eventos.);
+        > sempre começar o arquivo "#!/bin/sh";
+        > depois a frase que queira que apareça nesse script;
+        > Ex: echo "Frase aqui".
+        > Pressione a tecla "Esc" seguido de dois pontos (:), (x) e "Enter".
+
+OBS: Verificar como está a permissão do script que criou, usando "ls -l" para listar todos arquivos.
+    Sendo assim, se o arquivo que acabou de criar não estiver nas mesmas
+    permissões que os demais, deverá executar o seguinte arquivo:
+    > chmod u+x "nome do arquivo"
+
+OBS: Depois de todos os procedimentos, sair da pasta do .git, e voltar para main(ou master).
+
+> Podemos fazer uma copia do arquivo exemplo, "index.html" para uma pasta especifica, 
+exemplo, "web", com isso fazer copia toda vez que fizermos um push para main, sendo assim.
+Para isso, entraremos novamente na pasta "hooks", e criar um evento "post-receive", 
+com mesmo comando dos passos anteriores, "vim post-receive". Segue abaixo o script do arquivo:
+    >#!/bin/sh
+    git --git-dir="caminho do servidor" --work-tree="caminho da pasta par aonde vai copiar" checkout -f
+
+Sendo assim, toda vez que fizer alguma alteração no projeto, e fizer o "push", vai ter 
+um deploy totalmente automatizado utilizando Git. Esse processo chamado de "entrega contínua".
+ Entrega contínua é uma série de práticas que permitem que o código esteja de forma rápida e simples em produção. 
+ Tão rápido e simples quanto rodar um "git push".
+
+ 
+
